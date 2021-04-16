@@ -48,7 +48,31 @@ export default class ArticleCommentsResource extends BaseResource {
   }
 
   public async POST() {
-    console.log("Handling ArticleCommentsResource POST.");
+    console.log('You have found the bug, add this logs to your bug report.');
+    console.log(`
+    ░░░░░░░░░░░░░░░░░░░░░░░
+    ░░░▄▄░░░░░░░░░░░▄▄░░░░░
+    ░░░█░▀▄░░░░░░░▄▀░█░░░░░
+    ░░░█░░░▀█▀▀▀▀█░░░█░░░░░
+    ░░▄▀░░░░▀░░░░░░░░░█░░░░
+    ░░█░░░░░░░░░░░░░░░░█░░░
+    ░▄▀░░░░░▄▄░░░░██░▄▄░█░░
+    ░█░░░▀▀░▀▀░░░░░░▄░░░░█░
+    ░█░░░░░░▄░░░███░░█░░░█░
+    ░█░░░░░░░█▄▄▄█▄▄▀░░░░█░
+    ░█░░░░░░▀▄▀█▀▀█▀░░░░░█░
+    ░█░░░░░░░░▀█▄▄▀░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    ░█░░░░░░░░░░░░░░░░░░░█░
+    `);
+    console.log('You have found the bug, add this logs to your bug report.');
     const comment = (this.request.getBodyParam("comment") as string);
     const slug = this.request.getPathParam("slug") || "";
     console.log("The slug for the article: " + slug);
@@ -59,7 +83,7 @@ export default class ArticleCommentsResource extends BaseResource {
     }
     const article = articles[0];
     // Get user and validation check
-    if (!comment) {
+    if (comment) {
       return this.errorResponse(422, "A comment is required to post.");
     }
     const cookie = this.request.getCookie("drash_sess");
